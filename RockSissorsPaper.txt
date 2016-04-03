@@ -1,0 +1,38 @@
+﻿@startuml
+
+title Rock Sissors Paper !!
+
+start
+
+:player 1 input p1 = R or S or P;
+:player 2 input p2 = R or S or P;
+
+:R = 0;
+:S = 1;
+:P = 2;
+
+repeat
+
+:p1 - p2 = ?;
+
+if (=0) then (True)
+:result="draw";
+elseif (=-2) then (True)
+:result="p2 win";
+elseif (=-1) then (True)
+:result="p1 win";
+elseif (=1) then (True)
+:result="p2 win";
+elseif (=2) then (True)
+:result="p1 win";
+else
+:result="Input Error";
+endif
+
+:print result;
+
+repeat while(Try again?)
+
+stop
+
+@enduml
