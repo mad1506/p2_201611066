@@ -1,0 +1,29 @@
+﻿@startuml
+
+title BMI PROGRAM
+
+start
+
+:input user height;
+:input user weight;
+
+:bmi=weight/(height^2);
+
+if(bmi<18.5?) then (yes)
+    :result=low weight;
+elseif(18.5<=bmi<25.0?) then (yes)
+    :result=normal weight;
+elseif(25.0<=bmi<30.0?) then (yes)
+    :result=obesity;
+elseif(bmi>=30.0?) then (yes)
+    :result=dangerous obesity;
+else()
+    :result=Input Error;
+    
+endif
+
+:print result;
+
+stop
+
+@enduml
