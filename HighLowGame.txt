@@ -1,0 +1,30 @@
+﻿@startuml
+
+title High Low Game_21
+
+start
+
+repeat
+
+:input number (1-50);
+
+if(n!=21?) then (yes)
+    if(50>=n>21?) then (yes)
+        :result=Lower try again;
+    elseif(1<=n<21?) then (yes)
+        :result=Higher try again;
+    else()
+        :result=Input error try again;
+    endif
+    
+    :print result;
+    
+else()
+    :result=Correct!;
+    :print result;
+    
+stop
+
+endif
+
+@enduml
