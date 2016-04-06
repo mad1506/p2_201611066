@@ -1,0 +1,22 @@
+﻿@startuml
+
+title yun nyun
+
+start
+
+:input year;
+
+if (year%4 == 0 and not year%100 == 0) then (yes)
+    :result = yun nyun;
+elseif (year%4==0 and year%400==0) then (yes)
+    :result = yun nyun;
+else
+    :result = not yun nyun or Input error;
+    
+endif
+
+:print result;
+
+stop
+
+@enduml
