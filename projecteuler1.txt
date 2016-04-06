@@ -1,0 +1,25 @@
+﻿@startuml
+
+title Project Euler 1
+
+start
+
+:sum=0;
+:i=0;
+
+repeat
+:i = i+1;
+    if(i is 3 or 5's multi?) then (yes)
+        :sum = sum + i;
+
+
+    else (no)
+
+while (i > 1000?) is (yes)
+
+
+
+:print sum;
+
+
+stop
