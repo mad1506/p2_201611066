@@ -1,0 +1,37 @@
+﻿@startuml
+
+title High Low Game_21
+
+start
+
+:import random;
+:correct = random.randrange(1,51);
+
+repeat
+
+:answer = input (1-50);
+
+if(answer==correct?) then (yes)
+    :result=Correct!;
+    :print result;
+    
+stop
+    
+    
+else()
+
+    if(50>=answer>correct?) then (yes)
+        :result=Low try again;
+    elseif(1<=answer<correct?) then (yes)
+        :result=High try again;
+    else()
+        :result=Input error try again;
+    endif
+    
+    :print result;
+
+
+
+endif
+
+@enduml
