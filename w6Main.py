@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[4]:
+# In[10]:
 
 def projecteuler1():
     print "Hello! This is Project Euler 1 answer."
@@ -58,15 +58,26 @@ def highlowgame():
                 result = "Input Error. Try again."
             
             print result
+            
+def sumList(aList):
+    sum=0
+    for i in range(0,200):
+        sum=sum+aList[i]
+    return sum
 
-def lab5():
+def lab6():
     projecteuler1()
     yunnyun()
     highlowgame()
+    aList=list()
+    for i in range(1,1001):
+        if i%4==0 and i%5!=0:
+            aList.append(i)
+    labsum=sumList(aList)
+    print labsum
     
-
 def main():
-    lab5()
+    lab6()
     
 if __name__=="__main__":
     main()
