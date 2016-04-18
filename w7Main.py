@@ -1,4 +1,7 @@
-def drawSquareAta(size, pos):
+def drawSquareAt(size, pos):
+    import turtle
+    wn=turtle.Screen()
+    t1=turtle.Turtle()
     t1.penup()
     t1.setpos(pos)
     t1.pendown()
@@ -10,10 +13,10 @@ def drawSquareAta(size, pos):
     return tracks
 
 def lab7():
-    mytrack=drawSquareAta(size,pos)
+    mytrack=drawSquareAt(100,(10,10))
     print mytrack
     
-def mian():
+def main():
     lab7()
     
 if __name__=="__main__":
