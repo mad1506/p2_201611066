@@ -27,27 +27,7 @@ def drawSquareFrom(tracks):
     for i in range(0,4):
         drawSquareAt(100,tracks[i])
         
-def replayTracks(myTracks):
-    t1.clear()
-    t1.color("blue")
-    t1.speed(5)
-    for t in myTracks:
-        t1.goto(t)
-
-def lab7():
-    global wn
-    global t1
-    import turtle
-    wn=turtle.Screen()
-    t1=turtle.Turtle()
-    mytrack=drawSquareAt2(100,(10,10))
-    print mytrack
-    drawSquareFrom(100)
-    
-    import turtle
-    wn=turtle.Screen()
-    #wn.bgpic("myMaze.gif")
-    t1=turtle.Turtle()
+def saveTracks():
     t1.speed(6)
     t1.penup()
 
@@ -85,7 +65,31 @@ def lab7():
     t1.left(90)
     t1.fd(200)
     myTracks.append(t1.pos())
+    return myTracks
+        
+def replayTracks(myTracks):
+    t1.clear()
+    t1.color("blue")
+    t1.speed(5)
+    for t in myTracks:
+        t1.goto(t)
+
+def lab7():
+    global wn
+    global t1
+    import turtle
+    wn=turtle.Screen()
+    t1=turtle.Turtle()
+    mytrack=drawSquareAt2(100,(10,10))
+    print mytrack
+    drawSquareFrom(100)
     
+    import turtle
+    wn=turtle.Screen()
+    #wn.bgpic("myMaze.gif")
+    t1=turtle.Turtle()
+    
+    myTracks=saveTracks()
     replayTracks(myTracks)
     
 def main():
