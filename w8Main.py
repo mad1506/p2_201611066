@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[16]:
+# In[1]:
 
 def charCount(word):
     global mydict
@@ -14,8 +14,6 @@ def charCount(word):
     return mydict
 
 def drawBar():
-    get_ipython().magic(u'matplotlib inline')
-
     import matplotlib
     import matplotlib.pyplot as plt
 
