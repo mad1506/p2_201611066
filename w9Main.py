@@ -59,9 +59,20 @@ def countElectronics(a,b):
 
     return dict
     
-
+def calDistance(p1,p2):
+    import math
+    global dist
+    dist=list()
+    for p2 in tuple:
+        print "x1={0} y1={1}".format(p1[0],p2[1])
+        print "x2={0} y2={1}".format(p2[0],p2[1])
+        distance=math.sqrt((p1[0] - p2[0])**2 + (p1[1] - p2[1])**2)
+        print "distance: ", distance
+        dist.append(distance)
+    print "minimum distacne is: ", min(dist)
 
 def lab9():
+    import math
     print "각 문자 갯수 세고 막대그래프 그리기"
     word=raw_input("input your sentence: ")
     result=charCount(word)
@@ -79,10 +90,26 @@ def lab9():
     print "모든 집에 있는 가전제품 갯수 세기"
     result3=countElectronics(oh,fh)
     print result3
+    #경복궁역
+    kbg=(37.575811, 126.973588)
+    #광화문역
+    khm=(37.571593, 126.976443)
+    #안국역
+    ak=(37.576570, 126.985406)
+    #독립문역
+    drm=(37.574577, 126.957754)
+    #종각역
+    jk=(37.570099, 126.983046)
+    #시청역
+    sch=(37.565649, 126.976820)
+    global tuple
+    tuple=(khm, ak, drm, jk, sch)
+    p1=kbg
+    p2=tuple
+    calDistance(p1,p2)
 
 def main():
     lab9()
     
 if __name__=="__main__":
     main()
-
