@@ -30,17 +30,17 @@ def drawBar(mydict):
     plt.show()
     
 def electronics(a,b):
-    print "우리집"
+    print "our home"
     print a
-    print "친구집"
+    print "friend's home"
     print b
-    print "우리 집에 없지만 친구 집에 있는 가전제품" 
+    print "only friend's home" 
     print b.difference(a)
-    print "친구 집에 없지만 우리 집에 있는 가전제품" 
+    print "only our home" 
     print a.difference(b)
-    print "모든 집에 같이 있는 가전제품 "
+    print "together electronics"
     print a.intersection(b)
-    print "어느 한 집에라도 있는 가전제품"
+    print "at least one home"
     print a.union(b)
     
 def countElectronics(a,b):
@@ -70,24 +70,60 @@ def calDistance(p1,p2):
         print "distance: ", distance
         dist.append(distance)
     print "minimum distacne is: ", min(dist)
+    
+def mansum(my2dlist):
+    mansum=0
+    for i in my2dlist:
+        mansum=mansum+i[0]
+    return mansum
+
+def womansum(my2dlist):
+    womansum=0
+    for i in my2dlist:
+        womansum=womansum+i[1]
+    return womansum
+
+def manaver(my2dlist):
+    manaver=mansum(my2dlist)/len(my2dlist)
+    return manaver
+
+def womanaver(my2dlist):
+    womanaver=womansum(my2dlist)/len(my2dlist)
+    return womanaver
+
+def goosum(my2dlist):
+    goosum=0
+    goosumm=list()
+    for i in my2dlist:
+        goosum=i[0]+i[1]
+        goosumm.append(goosum)
+    return goosumm
+
+def drawBar2(mylist):
+    import matplotlib
+    import matplotlib.pyplot as plt
+
+    plt.bar(range(len(mylist)),mylist, align='center')
+    plt.xticks(range(len(mylist)), list(mylist))
+    plt.show()
 
 def lab9():
     import math
-    print "각 문자 갯수 세고 막대그래프 그리기"
+    print "count each string and draw bar graph."
     word=raw_input("input your sentence: ")
     result=charCount(word)
     print result
     drawBar(result)
-    print "문자와 숫자 갯수 세고 막대그래프 그리기"
+    print "count strings and digits and draw bar graph."
     word2=raw_input("input your sentence with ints: ")
     result2=countDigitisLetters(word2)
     print result2
     drawBar(result2)
-    print "우리집과 친구집"
+    print "our home and friend's home"
     oh={'TV','phone','camera','fridger','mixer','audio','cd player','light','computer','notebook','recorder'}
     fh={'coffee machine','radio','camera','running machine','ramp','computer','notebook','recorder'}
     electronics(oh,fh)
-    print "모든 집에 있는 가전제품 갯수 세기"
+    print "count all electronics"
     result3=countElectronics(oh,fh)
     print result3
     #경복궁역
@@ -107,6 +143,40 @@ def lab9():
     p1=kbg
     p2=tuple
     calDistance(p1,p2)
+    my2dlist=[
+    [74425, 76326],
+    [61164, 61636],
+    [109688, 115744],
+    [144796, 146776],
+    [174996, 181676],
+    [177841, 177434],
+    [204630, 205980],
+    [223373, 232245],
+    [161055, 166130],
+    [171576, 176735],
+    [279169, 293772],
+    [239450, 251066],
+    [148690, 156510],
+    [182977, 196992],
+    [237792, 242641],
+    [283869, 296762],
+    [209344, 210282],
+    [118965, 114441],
+    [186503, 186856],
+    [195734, 203014],
+    [254381, 249472],
+    [212401, 229111],
+    [271654, 295354],
+    [319197, 335045],
+    [229829, 231671]
+]
+    print "mansum: ", mansum(my2dlist)
+    print "womansum: ", womansum(my2dlist)
+    print "manaver: ", manaver(my2dlist)
+    print "womanaver: ", womanaver(my2dlist)
+    goosumm=goosum(my2dlist)
+    print "goosum: ", goosumm
+    drawBar2(goosumm)
 
 def main():
     lab9()
