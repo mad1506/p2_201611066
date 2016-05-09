@@ -7,7 +7,8 @@ def milkRate(coffee):
     coffeeList=coffee[1:]
     freq=0.
     for i in coffeeList:
-        if i[2]=="No":
+        x=i[2].upper()
+        if i[2]=="NO":
             freq=freq
         else:
             freq=freq+1
