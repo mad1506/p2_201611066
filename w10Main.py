@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[12]:
+# In[1]:
 
 def milkRate(coffee):
     coffeeList=coffee[1:]
@@ -59,6 +59,43 @@ def maxWord(lyrics):
                 d[c]=d[c]+1
     return max(d, key=d.get)
 
+def averWellContented(datas):
+    sumlist=[]
+    list=datas[1:]
+    for i in list:
+        sumlist.append(i[1])
+    sume=sum(sumlist)
+    return sume/len(sumlist)
+
+def averContented(datas):
+    sumlist=[]
+    list=datas[1:]
+    for i in list:
+        sumlist.append(i[2])
+    sume=sum(sumlist)
+    return sume/len(sumlist)
+
+def averNotContented(datas):
+    sumlist=[]
+    list=datas[1:]
+    for i in list:
+        sumlist.append(i[4])
+    sume=sum(sumlist)
+    return sume/len(sumlist)
+
+def averNeverContented(datas):
+    sumlist=[]
+    list=datas[1:]
+    for i in list:
+        sumlist.append(i[5])
+    sume=sum(sumlist)
+    return sume/len(sumlist)
+
+def averContenteds(datas):
+    return (averWellContented(datas)+averContented(datas))/2
+
+def averNoContenteds(datas):
+    return (averNotContented(datas)+averNeverContented(datas))/2
 
 def lab10():
     coffee=[
@@ -129,7 +166,21 @@ def lab10():
     max=maxWord(lyrics)
     print "High frequences rates word: ", max
     
-    
+    datas=[
+    ["division", "well contented", "contented", "normal" "not contented" "never contented"],
+    ["contents of education", 13.1, 37.1, 39.6, 8.7, 1.5],
+    ["methods of education", 10.6, 34.6, 39.5, 13.4, 1.9],
+    ["relations of friends", 27.1, 40.0, 28.5, 2.9, 1.5],
+    ["relations of teachers", 16.2, 37.8, 38.4, 6.8, 0.8],
+    ["facilities of school", 11.4, 29.8, 39.0, 14.8, 4.9],
+    ["surroundings of school", 12.2, 26.5, 42.0, 14.9, 4.4],
+    ["major", 13.5, 29.7, 43.4, 11.1, 2.4],
+    ["wide school life", 13.7, 37.6, 43.4, 4.1, 1.2]
+]
+    averA=averContenteds(datas)
+    averB=averNoContenteds(datas)
+    print "Average of Well Contented & Contented: ", averA
+    print "Average of Not Contented & Never Contented: ", averB
     
 def main():
     lab10()
