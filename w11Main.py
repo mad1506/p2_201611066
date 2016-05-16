@@ -4,18 +4,18 @@ def keyup():
     t1.write(pt)
     print "up",pt
     if isInRectangle(pt, coord):
-        t1.write("Turtle is in Rectangle!!")
+        t1.write("Turtle is in Rectangle!!!")
         t1.penup()
         t1.goto(-400,300)
         t1.pendown()
     elif isInCircle(pt,radius,cpos):
-        t1.write("Turtle is in Circle!!")
+        t1.write("Turtle is in Circle!!!")
         t1.penup()
         t1.goto(-400,300)
         t1.pendown()
         
     elif isOnLine(pt,line):
-        t1.write("Turtle is in Line!!")
+        t1.write("Turtle is in Line!!!")
         t1.penup()
         t1.goto(-400,300)
         t1.pendown()
@@ -32,16 +32,16 @@ def keydown():
     t1.write(pt)
     print "down",pt
     if isInRectangle(pt, coord):
-        t1.write("Turtle is in Rectangle!!")
+        t1.write("Turtle is in Rectangle!!!")
         t1.penup()
         t1.goto(-400,300)
         t1.pendown()
     elif isInCircle(pt,radius,cpos):
-        t1.write("Turtle is in Circle!!")
+        t1.write("Turtle is in Circle!!!")
         t1.penup()
         t1.goto(-400,300)
     elif isOnLine(pt,line):
-        t1.write("Turtle is in Line!!")
+        t1.write("Turtle is in Line!!!")
         t1.penup()
         t1.goto(-400,300)
         t1.pendown()
@@ -80,16 +80,16 @@ def mousegoto(x,y):
     t1.write(pt)
     print "click",pt
     if isInRectangle(pt, coord):
-        t1.write("Turtle is in Rectangle!!")
+        t1.write("Turtle is in Rectangle!!!")
         t1.penup()
         t1.goto(-400,300)
         t1.pendown()
     elif isInCircle(pt,radius,cpos):
-        t1.write("Turtle is in Circle!!")
+        t1.write("Turtle is in Circle!!!")
         t1.penup()
         t1.goto(-400,300)
     elif isOnLine(pt,line):
-        t1.write("Turtle is in Line!!")
+        t1.write("Turtle is in Line!!!")
         t1.penup()
         t1.goto(-400,300)
         t1.pendown()
