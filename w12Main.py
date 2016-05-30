@@ -53,9 +53,40 @@ def findWord(file, word):
                 print "Find " + word + " :" + i
     except IOError as e:
         print e
+        
+def outputWrite(file):
+    fout = open(file, 'w')
+    fout.write("first line\n")
+    fout.write("\tsecond line\n")
+    fout.write("third")
+    fout.close()
+    
+def realChangeToCap(file, filec):
+    fin = open(file, 'r')
+    fout = open(filec,'w')
+    editFlag='[drgnj edited {}]'.format(time.strftime("%Y-%m-%d %H:%M:%S"))
+    for sentence in fin:
+        if sentence.find('line')>= 0:
+            sentence=sentence.replace('line','LINE')
+            sentence=editFlag+sentence
+        fout.write(sentence)
+    fin.close()
+    fout.close()
 
+def writeTwoDimensions(file,data):
+    fout=open(file,'w')
+    for i,item in enumerate(data):
+        str="{0}\t".format(item)
+        fout.write(str)
+        if(i%2==1):
+            fout.write('\n')
+    fout.close()
+    
 def lab12():
+    global os
+    global time
     import os
+    import time
     
     writePythonTextFile()
     
@@ -91,11 +122,23 @@ def lab12():
     word="Python"
     findWord(file, word)
     
-    #대문자로 바꿔쓰기
+    # 대문자로 바꿔쓰기
     print "Change to Capital:\n"
     file='Python.txt'
     changeToCap(file)
 
+    # 대문자로 바꿔쓰기 2
+    print "Change to Capital 2:\n Check Your 'outputUpper.txt' File"
+    file='output.txt'
+    outputWrite(file)
+    filec='outputUpper.txt'
+    realChangeToCap(file, filec)
+    
+    # 2차원 데이터를 파일로 쓰기
+    file='outputNumber.txt'
+    data=[1,2,3,4,5,6,7,8,9,10]
+    writeTwoDimensions(file, data)
+    print "Write Two Dimensions File:\n Check Your 'outputNumber.txt' File"
 
 def main():
     lab12()
